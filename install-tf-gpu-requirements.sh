@@ -11,7 +11,7 @@ apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repo
 add-apt-repository "deb https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/ /"
 apt-key adv --fetch-keys http://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu2004/x86_64/7fa2af80.pub
 apt-get update
-apt-get install -y apt-utils
+apt-get install -y apt-utils graphviz
 
 wget http://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu2004/x86_64/nvidia-machine-learning-repo-ubuntu2004_1.0.0-1_amd64.deb
 
@@ -28,10 +28,10 @@ apt-get install --no-install-recommends -y \
     libcudnn8  \
     libcudnn8-dev
 
-apt-mark manual cuda* python* libcudnn8 nvidia* nsight* libcu* libcudnn8-dev
+#apt-mark manual cuda* python* libcudnn8 nvidia* nsight* libcu* libcudnn8-dev
 
 
 apt-get remove -y software-properties-common build-essential apt-utils
-apt-get -y autoremove
+#apt-get -y autoremove
 
 rm ./nvidia-machine-learning-repo-ubuntu2004_1.0.0-1_amd64.deb
